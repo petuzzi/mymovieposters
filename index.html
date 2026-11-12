@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="An offline collection of movie-poster artwork and original story concepts inspired by each image.">
+  <title>The Poster Room — An artwork & story archive</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Skip to the collection</a>
+  <div class="site-shell">
+    <header class="masthead"><a class="wordmark" href="index.html" aria-label="The Poster Room home"><span class="mark" aria-hidden="true">P<span>R</span></span> THE POSTER ROOM</a><span class="masthead-note">A private collection · Open to imagination</span></header>
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">THE ARTWORK & THE POSSIBILITIES</p>
+        <h1 id="page-title">Every poster.<br><em>Another story.</em></h1>
+        <div class="intro-bottom"><p>A collection of cinematic worlds. Turn a poster over and step into an original story inspired by its artwork.</p><p class="interaction-note"><span aria-hidden="true">↻</span> Hover to discover<br>Tap or use “Read story” to keep it open</p></div>
+      </section>
+      <section id="collection" aria-label="Poster collection">
+        <div class="collection-heading"><h2>The collection <span id="collection-total"></span></h2><span class="eyebrow">LOOK CLOSER. IMAGINE FURTHER.</span></div>
+        <form class="toolbar" role="search" onsubmit="return false">
+          <div class="search-field"><label for="search">Search the archive</label><input id="search" type="search" placeholder="A title, a genre, a story…" autocomplete="off"></div>
+          <div class="genre-field"><label for="genre">Explore a genre</label><select id="genre"><option value="All">All genres</option></select></div>
+          <button id="reset" type="button" class="quiet-button">Reset</button>
+        </form>
+        <p id="results" class="results" role="status" aria-live="polite"></p>
+        <div id="gallery" class="poster-grid"></div>
+        <div id="empty-state" class="empty-state" hidden><h3>No stories found.</h3><p>Try a different word or reset the filters to explore the whole collection.</p></div>
+      </section>
+    </main>
+    <footer><span>THE POSTER ROOM</span><p>All synopses are original creative concepts inspired by the artwork—not official film plots or factual film descriptions.</p><span>Made for a closer look.</span></footer>
+  </div>
+  <dialog id="viewer" aria-labelledby="viewer-title" aria-describedby="viewer-analysis">
+    <div class="viewer-top"><span class="eyebrow">A CLOSER LOOK</span><button id="close-viewer" type="button" aria-label="Close full poster viewer" autofocus>Close ×</button></div>
+    <div class="viewer-body"><div class="viewer-art"><img id="viewer-image" alt=""></div><div class="viewer-caption"><p id="viewer-position" class="eyebrow" aria-live="polite"></p><h2 id="viewer-title"></h2><p id="viewer-genre" class="poster-genre"></p><h3>Reading the artwork</h3><p id="viewer-analysis"></p><p class="concept-note">Visual interpretation of the artwork. Story concepts in this archive are original fiction, not official film plots.</p><a id="viewer-download" class="download-story" download>Save original story ↓</a></div></div>
+    <div class="viewer-navigation"><button id="previous" type="button">← Previous</button><span>← / → to browse · Esc to close</span><button id="next" type="button">Next →</button></div>
+  </dialog>
+  <noscript><p>This offline collection needs JavaScript enabled to show its posters and story controls.</p></noscript>
+</body>
+</html>
